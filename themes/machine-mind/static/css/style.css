@@ -1,0 +1,53 @@
+body {
+  background-color: #1a1a1d;
+  color: #d1f7ff;
+  font-size: 125%;
+  line-height: 1.5;
+  margin: 0 auto;
+  margin: 0 auto 0 auto;
+  padding: 0.75em;
+  max-width: 1000px;
+  font-family: "Open Sans";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #ff2a6d;
+  font-family: "Tektur";
+}
+
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+nav a {
+  text-decoration: none;
+  color: #05d9e8;
+}
+
+.nav-left {
+  display: inline;
+}
+
+.nav-right {
+  float: right;
+}
+
+@font-face {
+  font-family: "Tektur";
+  src: local("Tektur"), url("/fonts/Tektur.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: local("Open Sans"), url("/fonts/OpenSans.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}

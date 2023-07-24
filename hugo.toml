@@ -1,0 +1,4 @@
+baseURL = 'https://ture.dev/'
+languageCode = 'en-us'
+title = 'ture.dev'
+theme = 'machine-mind'
