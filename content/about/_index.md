@@ -1,3 +1,3 @@
-# Welcome to My Multi-Author Blog  
+# Hey, I'm Ture!
 
 It's me!
