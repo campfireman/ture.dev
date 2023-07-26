@@ -1,1 +1,9 @@
-{{ define "main" }} {{ .Content }} {{ end }}
+{{ define "main" }} {{ range where .Site.RegularPages "Type" "posts" }}
+<a class="post-link-wrapper" href="{{ .Permalink }}">
+  <article>
+    <h2>{{ .Title }}</h2>
+    {{- partial "post-meta.html" . -}}
+    <p>{{ .Summary }}<span class="dots"></span></p>
+  </article>
+</a>
+{{ end }} {{ end }}

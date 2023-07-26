@@ -1,6 +1,6 @@
 <footer>
   <script>
-    let dotsSpan = document.getElementById("dots");
+    let dotSpans = document.getElementsByClassName("dots");
     let dotsCount = 0;
 
     function sleep(time) {
@@ -8,9 +8,11 @@
     }
 
     function updateDots() {
-      if (dotsSpan != null) {
-        dotsSpan.innerText = ".".repeat(dotsCount);
-        dotsCount = dotsCount == 3 ? 0 : dotsCount + 1;
+      if (dotSpans != null) {
+        Array.from(dotSpans).forEach((element) => {
+          element.innerText = ".".repeat(dotsCount);
+        });
+        dotsCount = dotsCount == 2 ? 0 : dotsCount + 1;
       }
       sleep(500).then(() => updateDots());
     }

@@ -1,6 +1,6 @@
 body {
   background-color: #1a1a1d;
-  color: #d1f7ff;
+  color: var(--white);
   font-size: 125%;
   line-height: 1.5;
   margin: 0 auto;
@@ -16,8 +16,15 @@ h3,
 h4,
 h5,
 h6 {
-  color: #ff2a6d;
+  color: var(--red);
   font-family: "Tektur";
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
 }
 
 p {
@@ -25,9 +32,21 @@ p {
   text-justify: inter-word;
 }
 
+p img {
+  max-width: 100%;
+  margin: 0 auto 0 auto;
+  display: block;
+}
+
 nav a {
   text-decoration: none;
-  color: #05d9e8;
+}
+
+blockquote {
+  border-left: solid var(--turquoise) 0.1em;
+  padding-left: 0.5em;
+  color: var(--grey);
+  margin: 0 1em 0 1em;
 }
 
 .nav-left {
@@ -38,16 +57,57 @@ nav a {
   float: right;
 }
 
+.post-link-wrapper {
+  text-decoration: none;
+}
+
+.post-meta {
+  color: var(--turquoise);
+  font-size: 0.8em;
+}
+
+.highlight {
+  border: solid var(--grey) 0.01em;
+}
+
+.highlight pre {
+  background-color: inherit !important;
+  margin: 0;
+  padding: 1em;
+}
+
+.green {
+  color: var(--green);
+}
+
+.turquoise {
+  color: var(--turquoise);
+}
+
+.grey {
+  color: var(--grey);
+}
+
+:root {
+  --green: #1afe49;
+  --turquoise: #05d9e8;
+  --grey: #575267;
+  --red: #ff2a6d;
+  --white: #d1f7ff;
+}
+
 @font-face {
   font-family: "Tektur";
-  src: local("Tektur"), url("/fonts/Tektur.woff2") format("woff2");
+  src: local("Tektur"), url("/fonts/Tektur-Regular.woff2") format("woff2"),
+    url("/fonts/Tektur-Regular.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Open Sans";
-  src: local("Open Sans"), url("/fonts/OpenSans.woff2") format("woff2");
+  src: local("Open Sans"), url("/fonts/OpenSans-Regular.woff2") format("woff2"),
+    url("/fonts/OpenSans-Regular.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
 }

@@ -1,17 +1,7 @@
 {{ define "main" }}
-<section class="section">
-  <article>
-    <h1>{{ .Title }}</h1>
-    <div>
-      <div class="post">
-        <p>
-          <time>{{ .PublishDate.Format "January 2, 2006" }}</time> | {{
-          .ReadingTime }} {{ if eq .ReadingTime 1 }} minute {{ else }} minutes
-          {{ end }} read
-        </p>
-      </div>
-    </div>
-    <div class="content">{{ .Content }}</div>
-  </article>
-</section>
+<article>
+  <h1>{{ .Title }}</h1>
+  <div>{{- partial "post-meta.html" . -}}</div>
+  <div class="content">{{ .Content }}</div>
+</article>
 {{ end }}
