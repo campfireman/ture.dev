@@ -1,20 +1,20 @@
 <footer>
   <script>
-    let dotSpan = document.getElementById("dots");
-    let dotsCount = 0;
+    let cursorSpan = document.getElementById("cursor");
+    let cursorVisible = false;
 
     function sleep(time) {
       return new Promise((resolve) => setTimeout(resolve, time));
     }
 
-    function updateDots() {
-      if (dotSpan != null) {
-        dotSpan.innerText = ".".repeat(dotsCount);
-        dotsCount = dotsCount == 3 ? 0 : dotsCount + 1;
-        sleep(500).then(() => updateDots());
+    function updateCursor() {
+      if (cursorSpan != null) {
+        cursorSpan.innerText = cursorVisible ? "_" : "";
+        cursorVisible = !cursorVisible;
+        sleep(500).then(() => updateCursor());
       }
     }
 
-    updateDots();
+    updateCursor();
   </script>
 </footer>
