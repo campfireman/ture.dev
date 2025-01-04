@@ -1,12 +1,12 @@
 body {
-  background-color: #1a1a1d;
+  background-color: var(--dark-grey);
   color: var(--white);
   font-size: 125%;
   line-height: 1.5;
   margin: 0 auto;
   margin: 0 auto 0 auto;
   padding: 0.75em;
-  max-width: 1000px;
+  max-width: 777px;
   font-family: "Open Sans";
 }
 
@@ -38,15 +38,18 @@ p img {
   display: block;
 }
 
-nav a {
-  text-decoration: none;
+blockquote {
+  border-left: solid var(--green) 0.2em;
+  position: relative;
+  padding: 0.1em 1.5em 0.1em 1.5em;
+  color: var(--grey);
+  margin: 0;
+  border-radius: 0.2rem;
+  font-style: italic;
 }
 
-blockquote {
-  border-left: solid var(--turquoise) 0.1em;
-  padding-left: 0.5em;
-  color: var(--grey);
-  margin: 0 1em 0 1em;
+nav a {
+  text-decoration: none;
 }
 
 .nav-left {
@@ -76,6 +79,27 @@ blockquote {
   padding: 1em;
 }
 
+.post-separator {
+  margin-top: 1.5em;
+}
+
+footer {
+  margin-top: 2em;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer .footer-content {
+  margin-top: 2em;
+}
+
 .green {
   color: var(--green);
 }
@@ -89,10 +113,11 @@ blockquote {
 }
 
 :root {
+  --dark-grey: #1a1a1d;
   --green: #1afe49;
-  --turquoise: #05d9e8;
-  --grey: #575267;
+  --grey: #98979b;
   --red: #ff2a6d;
+  --turquoise: #05d9e8;
   --white: #d1f7ff;
 }
 
