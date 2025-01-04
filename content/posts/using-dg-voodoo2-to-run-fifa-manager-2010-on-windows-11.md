@@ -23,9 +23,11 @@ Lenovo [Ideapad 5 Pro 16ACH6](https://pcsupport.lenovo.com/uu/de/products/laptop
 
 Picking ChatGPT got me to a viable solution: [dgVoodoo2](https://github.com/dege-diosg/dgVoodoo 2). It implements old DirectX APIs with newer DirectX versions and gives more options for working out issues.
 
+![FIFA Running!](/fm10_start_screen.png)
+
 ### 0. Disable compatibility modes
 
-From previous tinkering you might still have some compatibility settings on your `FM10.exe`. Untick all of them as they will interfere with dgVoodoo 2.
+From previous tinkering you might still have some compatibility settings on your `Manager10.exe`. Untick all of them as they will interfere with dgVoodoo 2.
 
 ### 1. Download
 
@@ -34,20 +36,20 @@ Extract the zip archive in a location of your liking.
 
 ### 2. Copy DLLs
 
-For the software to do its voodoo magic you need to copy the x86 DirectX DLLs from `C:\you\voodoo\folder\x86\D3` to the location of your FIFA Manager 2010. In our case that was e.g. `C:\shitty\win\paths`. For simplicity copy all four files:
+For the software to do its voodoo magic you need to copy the x86 DirectX DLLs from `C:\Users\YOUR_USER\Downloads\dgVoodoo2_84_1\MS\x86` to the location of your FIFA Manager 2010. In our case that was e.g. `C:\Program Files (x86)\EA SPORTS\FUSSBALL MANAGER 10`. For simplicity copy all four files:
 
-- 1
-- 2
-- 3
-- 4
+- D3DImm.dll
+- DDraw.dll
+- D3D8.dll
+- D3D9.dll
+
+![FIFA Running!](/fm10_with_dgvoodoo2_files.png)
 
 ### 3. Test
 
 After copying the DLLs the game should already be able to start. In my case there were several issues that prevented the game from running without crashes. Nevertheless, first, we want to make sure configurations apply.
 
-#### 3.1 Run with watermark
-
-#### 3.2 Run without watermark
+![dgVoodoo 2 watermark](/fm10_dgvoodoo2_watermark.png)
 
 If the watermark disappeared, the settings have been applied correctly. If not, check the [official documentation](https://dege.freeweb.hu/dgVoodoo 2/). My explanation might be incomplete.
 
@@ -59,9 +61,13 @@ In the general tab we want to set:
 - mouse
 - window stuff
 
+![dgVoodoo 2 general tab configuration](/dg_voodoo2_general.png)
+
 ### 5. DirectX Configuration
 
 Uncheck all fancy stuff
+
+![dgVoodoo 2 DirectX tab configuration](/dg_voodoo2_directx.png)
 
 ### 6. Profit??
 
