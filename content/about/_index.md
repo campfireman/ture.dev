@@ -1,3 +1,3 @@
 # Hey, I'm Ture!
 
-It's me!
+I am a German guy with interest in technology.

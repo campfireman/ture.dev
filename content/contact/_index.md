@@ -1,3 +1,3 @@
 # Contact
 
-mail@mail.de
+Contact me at [hi@ture.dev](mailto:hi@ture.dev).
