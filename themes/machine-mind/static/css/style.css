@@ -112,6 +112,10 @@ footer .footer-content {
   color: var(--grey);
 }
 
+.not-found-ascii > a {
+  text-decoration: none;
+}
+
 :root {
   --dark-grey: #1a1a1d;
   --green: #1afe49;
@@ -127,6 +131,7 @@ footer .footer-content {
     url("/fonts/Tektur-Regular.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -135,4 +140,5 @@ footer .footer-content {
     url("/fonts/OpenSans-Regular.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
