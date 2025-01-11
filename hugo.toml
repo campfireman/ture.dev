@@ -1,4 +1,4 @@
-baseURL = 'https://ture.dev/'
+baseURL = 'https://blog.ture.dev/'
 languageCode = 'en-us'
-title = 'ture.dev'
+title = 'blog.ture.dev'
 theme = 'machine-mind'
