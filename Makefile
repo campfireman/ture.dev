@@ -6,4 +6,4 @@ build:
 	hugo
 
 upload: build
-	gsutil cp -r ./public/* gs://blog.ture.dev
+	gsutil -h "Cache-Control: public, max-age=3600" cp -r ./public/* gs://blog.ture.dev
