@@ -1,6 +1,7 @@
 ---
 title: "How to Run FIFA Manager 2010 on Windows 11 Using dgVoodoo 2"
 date: "2025-01-03"
+description: "A quick tutorial on how to get FIFA Manager 2010 running on Windows 11"
 ---
 
 My brother loves playing FIFA Manager 2010 (FM10). He is willing to get up at 5:00 in the morning just to play a couple of minutes in peace before he has to take care of his children and head out to his job.

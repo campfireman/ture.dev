@@ -1,4 +1,7 @@
 baseURL = 'https://blog.ture.dev/'
-languageCode = 'en-us'
+languageCode = 'en-US'
 title = 'blog.ture.dev'
 theme = 'machine-mind'
+
+[params]
+siteDescription = "Ture's personal blog"
