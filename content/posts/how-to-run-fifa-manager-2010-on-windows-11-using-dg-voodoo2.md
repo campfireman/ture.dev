@@ -6,6 +6,8 @@ description: "A quick tutorial on how to get FIFA Manager 2010 running on Window
 
 My brother loves playing FIFA Manager 2010 (FM10). He is willing to get up at 5:00 in the morning just to play a couple of minutes in peace before he has to take care of his children and head out to his job.
 
+<!--more-->
+
 ## The problem
 
 His new laptop (which I chose for him...) ran the game once and then kept on complaining about a missing hardware accelerator. Specifically, a black popup in the background called "EAGL PC CAPS RETRIEVAL" appeared and a notification saying "Für FUSSBALL MANAGER 10 wird ein Hardware-Grafikbeschleuniger benötigt".
