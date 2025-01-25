@@ -64,9 +64,70 @@ nav a {
   text-decoration: none;
 }
 
+.post-link-wrapper:hover {
+  color: var(--green);
+}
+
 .post-meta {
   color: var(--turquoise);
   font-size: 0.8em;
+}
+
+.comment {
+  padding: 0.2em 0 0.2em 0.8em;
+  border-radius: 0.2rem;
+  border-left-style: solid;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.comment-user-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.comment-user-link {
+  text-decoration: none;
+}
+
+.comment-avatar {
+  width: 3em;
+  height: 3em;
+  border-radius: 0.2em;
+}
+
+.comment-name-section {
+  margin-left: 0.5em;
+  color: var(--grey);
+  font-size: 0.85em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+}
+
+.comment-reply {
+  text-decoration: none;
+}
+
+#comment-loading-placeholder {
+  display: flex;
+  justify-content: center;
+}
+#comment-loading-logo {
+  animation: rotate 2s linear infinite;
+  width: 3em;
+  height: auto;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .highlight {
@@ -130,6 +191,8 @@ footer .footer-content {
   --red: #ff2a6d;
   --turquoise: #05d9e8;
   --white: #d1f7ff;
+
+  --comment-indentation: 1em;
 }
 
 @font-face {

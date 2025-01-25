@@ -1,0 +1,74 @@
+<hr class="post-separator" />
+<div>
+  <h2>Comments</h2>
+  <div id="post-comments">
+    <div id="comment-loading-placeholder">
+      <img id="comment-loading-logo" src="/sierpinski_logo.svg" />
+    </div>
+  </div>
+</div>
+<script>
+  const host = "{{ .context.Site.Params.MastodonHost }}";
+  const id = "{{ .mastodonPostID }}";
+  const commentSection = document.getElementById("post-comments");
+  const commentNestingColors = ["red", "green", "turquoise"];
+
+  function render_toots(toots, in_reply_to, depth) {
+    var tootsToRender = toots
+      .filter((toot) => toot.in_reply_to_id === in_reply_to)
+      .sort((a, b) => a.created_at.localeCompare(b.created_at));
+    tootsToRender.forEach((toot) => render_toot(toots, toot, depth));
+  }
+
+  function render_toot(toots, toot, depth) {
+    let comment = document.createElement("div");
+    comment.classList.add("comment");
+    comment.style.borderColor = `var(--${
+      commentNestingColors[depth % commentNestingColors.length]
+    })`;
+    comment.style.marginLeft = `calc(var(--comment-indentation) * ${depth})`;
+    comment.innerHTML = `
+      <div">
+        <a class="comment-user-link" href="${toot.account.url}">
+          <div class="comment-user-info">
+            <div>
+              <img src="${toot.account.avatar}" class="comment-avatar" />
+            </div>
+            <div class="comment-name-section">
+              <div class="comment-username">
+                ${toot.account.username}
+              </div>
+              <div class="comment-user-fqn">
+                @${toot.account.acct}
+              </div>
+            </div>
+          </div>
+        </a>
+        <div>
+          ${toot.content}
+        </div>
+        <a href="${toot.url}" class="comment-reply">
+            <img src="/icon_reply.svg" />
+            <span>${toot.replies_count}</span>
+        </a>
+      </div>`;
+    commentSection.appendChild(comment);
+    render_toots(toots, toot.id, depth + 1);
+  }
+
+  function loadComments() {
+    fetch("https://" + host + "/api/v1/statuses/" + id + "/context")
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        if (!data["descendants"]) {
+          commentSection.innerHTML = "No comments found.";
+          return;
+        }
+        commentSection.innerHTML = "";
+        render_toots(data["descendants"], id, 0);
+      });
+  }
+  loadComments();
+</script>

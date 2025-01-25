@@ -4,4 +4,7 @@
   {{- partial "post-meta.html" . -}}
   <div class="post-content">{{ .Content }}</div>
 </article>
+{{- with .Params.mastodonPostId }}
+  {{- partial "comments.html" (dict "context" $ "mastodonPostID" .) -}}
+{{- end }}
 {{ end }}

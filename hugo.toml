@@ -4,4 +4,5 @@ title = "Ture's Tech Blog"
 theme = 'machine-mind'
 
 [params]
-siteDescription = "Ture's personal blog"
+    siteDescription = "Ture's personal blog"
+    mastodonHost = "mastodon.social"
