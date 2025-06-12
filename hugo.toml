@@ -6,3 +6,12 @@ theme = 'machine-mind'
 [params]
     siteDescription = "Ture's personal blog"
     mastodonHost = "mastodon.social"
+
+[markup]
+  [markup.goldmark.parser]
+    attribute = true
+    wrapStandAloneImageWithinParagraph = false
+
+  [markup.goldmark.renderHooks]
+    [markup.goldmark.renderHooks.image]
+      enableDefault = true

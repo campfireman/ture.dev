@@ -60,6 +60,26 @@ nav a {
   float: right;
 }
 
+figure {
+  max-width: 100%;
+  margin: 1.5em auto;
+  padding: 0;
+}
+
+figure img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+figcaption {
+  text-align: center;
+  font-size: 0.9em;
+  color: var(--grey);
+  margin-top: 0.5em;
+}
+
 .post-link-wrapper {
   text-decoration: none;
 }
@@ -115,6 +135,7 @@ nav a {
   display: flex;
   justify-content: center;
 }
+
 #comment-loading-logo {
   animation: rotate 2s linear infinite;
   width: 3em;
@@ -125,6 +146,7 @@ nav a {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -180,7 +202,7 @@ footer .footer-content {
   color: var(--grey);
 }
 
-.not-found-ascii > a {
+.not-found-ascii>a {
   text-decoration: none;
 }
 
