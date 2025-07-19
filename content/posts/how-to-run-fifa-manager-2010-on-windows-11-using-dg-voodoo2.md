@@ -42,7 +42,7 @@ To get started:
 2. Extract the zip archive in a location of your liking.
 3. Copy the x86 DirectX DLLs from `C:\Users\YOUR_USER\Downloads\dgVoodoo2_84_1\MS\x86` to the location of your FIFA Manager 2010. In our case that was e.g. `C:\Program Files (x86)\EA SPORTS\FUSSBALL MANAGER 10`. For simplicity copy all four files (D3DImm.dll, DDraw.dll, D3D8.dll, D3D9.dll).
 
-![FIFA Running!](/fm10_with_dgvoodoo2_files.png)
+![The dgVoodoo 2 files in the FIFA Manager 10 directory](/fm10_with_dgvoodoo2_files.png)
 
 ### 2. Test
 
