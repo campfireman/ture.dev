@@ -117,6 +117,11 @@ figcaption {
   font-size: 0.8em;
 }
 
+.comment-help {
+  text-align: center;
+  color: var(--grey)
+}
+
 .comment {
   padding: 0.2em 0 0.2em 0.8em;
   border-radius: 0.2rem;
@@ -125,9 +130,28 @@ figcaption {
   margin-bottom: 1em;
 }
 
+.comment-empty {
+  margin: 2em;
+  color: var(--turquoise);
+}
+
 .comment-user-info {
   display: flex;
   flex-direction: row;
+  align-items: center;
+}
+
+.comment-content {
+  font-size: 0.9em;
+}
+
+.comment-username {
+  font-weight: bold;
+  color: var(--white);
+}
+
+.comment-user-fqn {
+  font-weight: lighter;
 }
 
 .comment-user-link {
@@ -135,24 +159,39 @@ figcaption {
 }
 
 .comment-avatar {
-  width: 3em;
-  height: 3em;
+  width: 2.5em;
+  height: 2.5em;
   border-radius: 0.2em;
 }
 
 .comment-name-section {
   margin-left: 0.5em;
   color: var(--grey);
-  font-size: 0.85em;
+  font-size: 0.8em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 0.4em;
-  padding-bottom: 0.4em;
 }
 
-.comment-reply {
+.comment-actions {
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+  gap: 0.7em;
+}
+
+.comment-reply,
+.comment-boost,
+.comment-star {
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.icon-reply {
+  fill: var(--turquoise);
+  color: var(--green);
 }
 
 #comment-loading-placeholder {
@@ -212,6 +251,11 @@ footer .footer-content {
 
 .rss-icon {
   width: 1.2em;
+}
+
+.mastodon-icon {
+  height: 1em;
+  vertical-align: middle;
 }
 
 .green {

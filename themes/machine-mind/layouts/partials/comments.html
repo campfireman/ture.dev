@@ -1,6 +1,7 @@
 <hr class="post-separator" />
 <div>
-  <h2>Comments</h2>
+  <h2>Comments <a href="https://{{ .context.Site.Params.MastodonHost }}/@campfireman/{{ .mastodonPostID }}"><img
+        class="mastodon-icon" src="/mastodon_icon.svg" /></a></h2>
   <div id="post-comments">
     <div id="comment-loading-placeholder">
       <img id="comment-loading-logo" alt="comment-loading-spinner" src="/sierpinski_logo.svg" />
@@ -17,6 +18,25 @@
     var tootsToRender = toots
       .filter((toot) => toot.in_reply_to_id === in_reply_to)
       .sort((a, b) => a.created_at.localeCompare(b.created_at));
+
+    if (depth == 0) {
+      let info = document.createElement("div");
+      info.classList = ["comment-help"]
+      let help = document.createElement("div");
+      help.innerHTML = `
+        <span>Leave a comment on this <a href="https://${host}/@campfireman/${id}">Mastodon post</a> for it to show up here.</span>
+      `;
+      info.appendChild(help);
+      if (tootsToRender.length == 0) {
+        let noComments = document.createElement("div");
+        noComments.classList = ["comment-empty"]
+        noComments.innerHTML = `
+        <code>(＞﹏＜)</code><span> No comments yet!</span>
+      `;
+        info.appendChild(noComments);
+      }
+      commentSection.appendChild(info);
+    }
     tootsToRender.forEach((toot) => render_toot(toots, toot, depth));
   }
 
@@ -27,30 +47,37 @@
       })`;
     comment.style.marginLeft = `calc(var(--comment-indentation) * ${depth})`;
     comment.innerHTML = `
-      <div">
-        <a class="comment-user-link" href="${toot.account.url}">
-          <div class="comment-user-info">
-            <div>
-              <img src="${toot.account.avatar}" alt="mastodon-${toot.account.username}-avatar-image" class="comment-avatar" />
+      <a class="comment-user-link" href="${toot.account.url}">
+        <div class="comment-user-info">
+          <img src="${toot.account.avatar}" alt="mastodon-${toot.account.username}-avatar-image" class="comment-avatar" />
+          <div class="comment-name-section">
+            <div class="comment-username">
+              ${toot.account.username}
             </div>
-            <div class="comment-name-section">
-              <div class="comment-username">
-                ${toot.account.username}
-              </div>
-              <div class="comment-user-fqn">
-                @${toot.account.acct}
-              </div>
+            <div class="comment-user-fqn">
+              @${toot.account.acct}
             </div>
           </div>
-        </a>
-        <div>
-          ${toot.content}
         </div>
+      </a>
+      <div class="comment-content">
+        ${toot.content}
+      </div>
+      <div class="comment-actions">
         <a href="${toot.url}" class="comment-reply">
-            <img src="/icon_reply.svg" alt="mastodon-reply" />
+            <img src="/mastodon_icon_reply.svg" alt="mastodon-reply" />
             <span>${toot.replies_count}</span>
         </a>
+        <a href="${toot.url}" class="comment-boost">
+            <img src="/mastodon_icon_boost.svg" alt="mastodon-boost" />
+            <span>${toot.reblogs_count}</span>
+        </a>
+        <a href="${toot.url}" class="comment-star">
+            <img src="/mastodon_icon_star.svg" alt="mastodon-star" />
+            <span>${toot.favourites_count}</span>
+        </a>
       </div>`;
+    console.log(toot);
     commentSection.appendChild(comment);
     render_toots(toots, toot.id, depth + 1);
   }
