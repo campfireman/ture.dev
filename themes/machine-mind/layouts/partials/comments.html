@@ -3,7 +3,7 @@
   <h2>Comments</h2>
   <div id="post-comments">
     <div id="comment-loading-placeholder">
-      <img id="comment-loading-logo" src="/sierpinski_logo.svg" />
+      <img id="comment-loading-logo" alt="comment-loading-spinner" src="/sierpinski_logo.svg" />
     </div>
   </div>
 </div>
@@ -23,16 +23,15 @@
   function render_toot(toots, toot, depth) {
     let comment = document.createElement("div");
     comment.classList.add("comment");
-    comment.style.borderColor = `var(--${
-      commentNestingColors[depth % commentNestingColors.length]
-    })`;
+    comment.style.borderColor = `var(--${commentNestingColors[depth % commentNestingColors.length]
+      })`;
     comment.style.marginLeft = `calc(var(--comment-indentation) * ${depth})`;
     comment.innerHTML = `
       <div">
         <a class="comment-user-link" href="${toot.account.url}">
           <div class="comment-user-info">
             <div>
-              <img src="${toot.account.avatar}" class="comment-avatar" />
+              <img src="${toot.account.avatar}" alt="mastodon-${toot.account.username}-avatar-image" class="comment-avatar" />
             </div>
             <div class="comment-name-section">
               <div class="comment-username">
@@ -48,7 +47,7 @@
           ${toot.content}
         </div>
         <a href="${toot.url}" class="comment-reply">
-            <img src="/icon_reply.svg" />
+            <img src="/icon_reply.svg" alt="mastodon-reply" />
             <span>${toot.replies_count}</span>
         </a>
       </div>`;
