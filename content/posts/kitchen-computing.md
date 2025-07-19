@@ -2,6 +2,7 @@
 title: "Kitchen Computing"
 date: "2025-05-15"
 description: "A change in perspective"
+mastodonPostID: "114868436029855197"
 ---
 
 In recent weeks, I’ve been captured by a thought: What if I had a computer in my kitchen? Usually I would set up my old trusted tablet for watching a show or reading something, but that is just not convenient enough.
