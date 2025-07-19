@@ -6,4 +6,6 @@ build:
 	hugo
 
 upload: build
-	gsutil -h "Cache-Control: public, max-age=3600" cp -r ./public/* gs://blog.ture.dev
+	gsutil -m rsync -d -r ./public gs://blog.ture.dev
+	gsutil -m setmeta -h "Cache-Control:no-cache" gs://blog.ture.dev/**/*.html
+	gsutil -m setmeta -h "Cache-Control:public, max-age=144000, immutable" gs://blog.ture.dev/**/*.{css,png,jpg,svg,woff2,ttf}
