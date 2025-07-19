@@ -14,6 +14,9 @@ if ! command -v avifenc >/dev/null 2>&1; then
   exit 1
 fi
 
+echo "Deleting unwanted files"
+find "${TARGET_DIR}" -name '.DS_Store' -delete
+
 echo "→ Converting images to AVIF…"
 find "$TARGET_DIR" -type f \( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' \) | \
 while IFS= read -r img; do
