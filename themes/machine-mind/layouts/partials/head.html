@@ -6,6 +6,8 @@
     content="{{ .Description | default .Site.Params.SiteDescription }}"
   />
   <meta name="fediverse:creator" content="@campfireman@mastodon.social">
+  {{ template "_internal/opengraph.html" . }}
+
   <link rel="stylesheet" type="text/css" href="/css/style.css" />
   <link rel="icon" href="/sierpinski_logo.svg" />
   <link rel="me" href="https://mastodon.social/@campfireman">

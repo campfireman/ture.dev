@@ -6,6 +6,7 @@ theme = 'machine-mind'
 [params]
     siteDescription = "Ture's personal blog"
     mastodonHost = "mastodon.social"
+    images = ["/static/sierpinski_tiled.png"]
 
 [markup]
   [markup.goldmark.parser]
