@@ -26,7 +26,7 @@ Once the domain is ready, the choice of provider is next. I have not done thorou
 
 Because I own my domain, migrating away from Proton for whatever reason is no problem anymore. On the technical side, there is some configuration to be done before the mailing works, but Proton has a really [good guide](https://Proton.me/support/custom-domain) and (imo) UI/UX so it was really simple.
 
-![Helpful UI in Proton to indicate domain configuration issues](/Proton_domain_setup.png)
+![Helpful UI in Proton to indicate domain configuration issues](/proton_domain_setup.png)
 
 ## Subaddressing
 
