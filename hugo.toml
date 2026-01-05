@@ -6,12 +6,14 @@ theme = 'machine-mind'
 [params]
     siteDescription = "Ture's personal blog"
     mastodonHost = "mastodon.social"
-    images = ["/static/sierpinski_tiled.png"]
 
 [markup]
-  [markup.goldmark.parser]
-    attribute = true
-    wrapStandAloneImageWithinParagraph = false
+  [markup.goldmark]
+    [markup.goldmark.parser]
+      wrapStandAloneImageWithinParagraph = false
+    [markup.goldmark.parser.attribute]
+      block = true
+      title = true
 
   [markup.goldmark.renderHooks]
     [markup.goldmark.renderHooks.image]

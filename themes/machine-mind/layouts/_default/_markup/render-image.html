@@ -1,6 +1,11 @@
+{{- $attrs := .Attributes -}}
 {{- if .IsBlock -}}
-<figure>
-    <img src="{{ .Destination | safeURL }}" alt="{{ .PlainText }}" {{ with .Title }}title="{{ . }}" {{ end }}>
+<figure {{ if $attrs.class }} class="{{ $attrs.class }}"{{ end }}>
+    <img src="{{ .Destination | safeURL }}" 
+         alt="{{ .PlainText }}" 
+         {{ with .Title }}title="{{ . }}"{{ end }}
+         {{- range $k, $v := $attrs }}{{ if ne $k "class" }} {{ $k }}="{{ $v }}"{{ end }}{{ end -}}>
+    
     {{- if .Title }}
     <figcaption>{{ .Title }}</figcaption>
     {{ else }}
@@ -8,5 +13,8 @@
     {{ end -}}
 </figure>
 {{- else -}}
-<img src="{{ .Destination | safeURL }}" alt="{{ .PlainText }}" {{ with .Title }}title="{{ . }}" {{ end }}>
+<img src="{{ .Destination | safeURL }}" 
+     alt="{{ .PlainText }}" 
+     {{ with .Title }}title="{{ . }}"{{ end }}
+     {{- range $k, $v := $attrs }} {{ $k }}="{{ $v }}"{{ end -}}>
 {{- end -}}
