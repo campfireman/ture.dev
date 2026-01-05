@@ -225,6 +225,11 @@ figcaption {
   padding: 1em;
 }
 
+.img-width-70 {
+  width: 70%;
+  height: auto;
+}
+
 .post-separator {
   margin-top: 1.5em;
 }
