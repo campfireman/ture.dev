@@ -279,6 +279,10 @@ footer .footer-content {
   text-decoration: none;
 }
 
+pre {
+  overflow: scroll;
+}
+
 :root {
   --dark-grey: #1a1a1d;
   --green: #1afe49;
