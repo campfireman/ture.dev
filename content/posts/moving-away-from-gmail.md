@@ -5,7 +5,7 @@ description: "Finally getting more digitally independent"
 mastodonPostID: "115813970069237641"
 ---
 
-The [Digital Independence Day](https://di.day) presented at the [39C3](https://events.ccc.de/congress/2025/infos/startpage.html) has motivated me to start some of my long-postponed projects. I decided to start with the most painful but also most important one: Getting rid of my dependence on Gmail.
+The Digital Independence Day presented at the 39C3 has motivated me to start some of my long-postponed projects. I decided to start with the most painful but also most important one: Getting rid of my dependence on Gmail.
 
 <!--more-->
 
