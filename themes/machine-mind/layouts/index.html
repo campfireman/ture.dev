@@ -1,15 +1,15 @@
 {{ define "main" }} {{ range $index, $page := where .Site.RegularPages "Type"
 "posts" }}
-<a class="post-link-wrapper" href="{{ $page.Permalink }}">
-  <article>
+<a href="{{ $page.Permalink }}" class="post-link">
+  <article class="post-link-wrapper" >
     <h2>{{ $page.Title }}</h2>
     {{- partial "post-meta.html" $page -}}
     <p>{{ $page.Summary }}</p>
-    <div class="green">[...]</div>
+    <div class="green read-more">[...]</div>
   </article>
   {{ if not (eq (add $index 1) (len (where .Site.RegularPages "Type" "posts")))
   }}
-  <hr class="post-separator" />
+  <div class="post-separator"></div>
   {{ end }}
 </a>
 {{ end }} {{ end }}
